@@ -21,7 +21,7 @@ export function priorityTone(p: Priority): 'red' | 'amber' | 'blue' | 'slate' {
 export function Progress({ value, tone = 'bg-blue-600' }: { value: number; tone?: string }) {
   return <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800"><div className={`h-full rounded-full ${tone}`} style={{ width: `${Math.min(100, Math.max(0, value))}%` }} /></div>
 }
-export function Field({ label, children, error }: { label: string; children: React.ReactNode; error?: string }) {
+export function Field({ label, children, error }: { label: string; children: React.ReactNode; error?: string | undefined }) {
   return <label className="block text-sm"><span className="mb-1 block font-medium text-slate-700 dark:text-slate-200">{label}</span>{children}{error && <span className="mt-1 block text-xs text-red-600">{error}</span>}</label>
 }
 export const inputCls = 'w-full rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:focus:ring-blue-900'
