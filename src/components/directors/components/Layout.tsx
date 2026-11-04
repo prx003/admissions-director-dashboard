@@ -51,7 +51,7 @@ export default function DirectorsLayout() {
     <div className={`app-shell directors-embedded${settings.theme === "dark" ? " dark" : ""}`}>
       <div className="dashboard-device">
         <aside className="device-sidebar" aria-label="Main navigation">
-          <Link to="/directors" className="sidebar-brand">
+          <Link to="/directors" activeProps={{ className: "" }} className="sidebar-brand">
             <span className="sidebar-brand-icon"><Building2 size={18} /></span>
             <span className="sidebar-brand-copy"><strong>Director’s Office</strong><small>Institute Management</small></span>
           </Link>
@@ -63,6 +63,8 @@ export default function DirectorsLayout() {
                   <Link
                     key={item.to}
                     to={item.to}
+                    activeOptions={{ exact: item.exact, includeSearch: false }}
+                    activeProps={{ className: "" }}
                     className={`sidebar-link${active(item.to, item.exact) ? " active" : ""}`}
                   >
                     <item.icon size={16} />
