@@ -16,7 +16,7 @@ export const Route = createFileRoute("/directors/skillai/$")({
   component: SkillAIRoute,
 });
 
-function SkillAIRoute() {
+export function SkillAIRoute() {
   const { pathname } = useLocation();
   return (
     <div>

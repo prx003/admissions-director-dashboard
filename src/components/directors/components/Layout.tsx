@@ -44,7 +44,7 @@ export default function DirectorsLayout() {
   const [searchOpen, setSearchOpen] = useState(false)
   const pathname = useRouterState({ select: (s) => s.location.pathname })
   const unread = notifications.filter(item => !item.read).length
-  const title = TITLES[pathname] || "Dashboard"
+  const title = TITLES[pathname] || (pathname.startsWith("/directors/skillai") ? "SkillAI" : "Dashboard")
   const active = (to: string, exact?: boolean) =>
     exact ? pathname === to : pathname.startsWith(to)
 
