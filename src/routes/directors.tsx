@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import DirectorsLayout from "@/components/directors/components/Layout";
+import { AppShell } from "@/components/AppShell";
 import { AppProvider } from "@/components/directors/store/AppContext";
 
 // Directors module shell (skillai dashboard): sidebar + topbar + content outlet.
@@ -18,8 +19,10 @@ export const Route = createFileRoute("/directors")({
 
 function DirectorsRoute() {
   return (
-    <AppProvider>
-      <DirectorsLayout />
-    </AppProvider>
+    <AppShell title="Directors">
+      <AppProvider>
+        <DirectorsLayout />
+      </AppProvider>
+    </AppShell>
   );
 }
