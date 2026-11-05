@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import {
   Activity, Bell, Building2, CheckSquare, ClipboardList, FileText,
-  LayoutDashboard, Search, Settings, UserRound, Users,
+  LayoutDashboard, Search, Settings, Sparkles, UserRound, Users,
 } from "lucide-react";
 import { useApp } from "../store/AppContext";
 
@@ -20,6 +20,7 @@ const RAIL = [
   { section: "Insights", links: [
     { to: "/directors/reports", label: "Reports", icon: FileText, exact: false },
     { to: "/directors/activity", label: "Activity", icon: Activity, exact: false },
+    { to: "/directors/skillai", label: "SkillAI", icon: Sparkles, exact: false },
   ] },
 ] as const;
 
