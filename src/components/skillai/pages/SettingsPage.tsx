@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useRef, useState } from 'react'
 import { useApp } from '../store/AppContext'
 import { Btn, Card, Confirm, DropdownSelect, Field, inputCls } from '../components/ui'

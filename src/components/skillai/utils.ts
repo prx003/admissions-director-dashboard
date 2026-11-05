@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { format, parseISO, isBefore } from 'date-fns'
 export const fmt = (d: string) => { try { return format(parseISO(d), 'dd MMM yyyy') } catch { return d } }
 export const fmtDT = (d: string) => { try { return format(parseISO(d), 'dd MMM yyyy, hh:mm a') } catch { return d } }

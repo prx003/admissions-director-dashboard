@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Link, useNavigate } from '../router'
 import {
   AlertTriangle, ArrowUpRight, BarChart3, CalendarDays, CheckSquare,

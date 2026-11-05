@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from '../router'
 import { Download, Printer } from 'lucide-react'

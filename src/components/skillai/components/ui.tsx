@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { X, Search, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'

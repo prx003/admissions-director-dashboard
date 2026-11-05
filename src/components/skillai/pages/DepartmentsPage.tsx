@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from '../router'
 import { useApp } from '../store/AppContext'

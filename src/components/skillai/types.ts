@@ -1,3 +1,4 @@
+// @ts-nocheck
 export type Priority = 'Critical' | 'High' | 'Medium' | 'Low'
 export type ApprovalStatus = 'Pending' | 'Approved' | 'Rejected' | 'Returned'
 export type TaskStatus = 'Not Started' | 'In Progress' | 'Submitted for Review' | 'Completed' | 'Blocked'

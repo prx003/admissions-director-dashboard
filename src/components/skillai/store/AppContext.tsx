@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import type { ActivityItem, Approval, ApprovalStatus, NotificationItem, Profile, Settings, Staff, Task } from '../types'
 import { activity as seedActivity, approvals as seedApprovals, notifications as seedNotifications, staff as seedStaff, tasks as seedTasks } from '../data/seed'

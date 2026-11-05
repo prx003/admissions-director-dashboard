@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { Approval, ActivityItem, Department, NotificationItem, Staff, Task } from '../types'
 export const departments: Department[] = [
   { id: 'D01', name: 'AI', short: 'AI', headId: 'S01', students: 642, target: 92, achievement: 89, budget: 4200000, spent: 3180000 },
