@@ -50,6 +50,8 @@ import { Route as AdmissionCallCenterLeadsRouteImport } from './routes/admission
 import { Route as AdmissionCallCenterMyLeadsRouteImport } from './routes/admission.call-center.my-leads'
 import { Route as AdmissionCallCenterReportsRouteImport } from './routes/admission.call-center.reports'
 import { Route as AdmissionCallCenterUploadRouteImport } from './routes/admission.call-center.upload'
+import { Route as DirectorsSkillaiIndexRouteImport } from './routes/directors.skillai.index'
+import { Route as DirectorsSkillaiSplatRouteImport } from './routes/directors.skillai.$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -262,6 +264,16 @@ const AdmissionCallCenterUploadRoute =
     path: '/upload',
     getParentRoute: () => AdmissionCallCenterRoute,
   } as any)
+const DirectorsSkillaiIndexRoute = DirectorsSkillaiIndexRouteImport.update({
+  id: '/skillai/',
+  path: '/skillai/',
+  getParentRoute: () => DirectorsRoute,
+} as any)
+const DirectorsSkillaiSplatRoute = DirectorsSkillaiSplatRouteImport.update({
+  id: '/skillai/$',
+  path: '/skillai/$',
+  getParentRoute: () => DirectorsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -303,8 +315,10 @@ export interface FileRoutesByFullPath {
   '/admission/call-center/my-leads': typeof AdmissionCallCenterMyLeadsRoute
   '/admission/call-center/reports': typeof AdmissionCallCenterReportsRoute
   '/admission/call-center/upload': typeof AdmissionCallCenterUploadRoute
+  '/directors/skillai/$': typeof DirectorsSkillaiSplatRoute
   '/admission/agents/': typeof AdmissionAgentsIndexRoute
   '/admission/call-center/': typeof AdmissionCallCenterIndexRoute
+  '/directors/skillai/': typeof DirectorsSkillaiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -342,8 +356,10 @@ export interface FileRoutesByTo {
   '/admission/call-center/my-leads': typeof AdmissionCallCenterMyLeadsRoute
   '/admission/call-center/reports': typeof AdmissionCallCenterReportsRoute
   '/admission/call-center/upload': typeof AdmissionCallCenterUploadRoute
+  '/directors/skillai/$': typeof DirectorsSkillaiSplatRoute
   '/admission/agents': typeof AdmissionAgentsIndexRoute
   '/admission/call-center': typeof AdmissionCallCenterIndexRoute
+  '/directors/skillai': typeof DirectorsSkillaiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -386,8 +402,10 @@ export interface FileRoutesById {
   '/admission/call-center/my-leads': typeof AdmissionCallCenterMyLeadsRoute
   '/admission/call-center/reports': typeof AdmissionCallCenterReportsRoute
   '/admission/call-center/upload': typeof AdmissionCallCenterUploadRoute
+  '/directors/skillai/$': typeof DirectorsSkillaiSplatRoute
   '/admission/agents/': typeof AdmissionAgentsIndexRoute
   '/admission/call-center/': typeof AdmissionCallCenterIndexRoute
+  '/directors/skillai/': typeof DirectorsSkillaiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -431,8 +449,10 @@ export interface FileRouteTypes {
     | '/admission/call-center/my-leads'
     | '/admission/call-center/reports'
     | '/admission/call-center/upload'
+    | '/directors/skillai/$'
     | '/admission/agents/'
     | '/admission/call-center/'
+    | '/directors/skillai/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -470,8 +490,10 @@ export interface FileRouteTypes {
     | '/admission/call-center/my-leads'
     | '/admission/call-center/reports'
     | '/admission/call-center/upload'
+    | '/directors/skillai/$'
     | '/admission/agents'
     | '/admission/call-center'
+    | '/directors/skillai'
   id:
     | '__root__'
     | '/'
@@ -513,8 +535,10 @@ export interface FileRouteTypes {
     | '/admission/call-center/my-leads'
     | '/admission/call-center/reports'
     | '/admission/call-center/upload'
+    | '/directors/skillai/$'
     | '/admission/agents/'
     | '/admission/call-center/'
+    | '/directors/skillai/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -820,6 +844,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdmissionCallCenterUploadRouteImport
       parentRoute: typeof AdmissionCallCenterRoute
     }
+    '/directors/skillai/': {
+      id: '/directors/skillai/'
+      path: '/skillai'
+      fullPath: '/directors/skillai/'
+      preLoaderRoute: typeof DirectorsSkillaiIndexRouteImport
+      parentRoute: typeof DirectorsRoute
+    }
+    '/directors/skillai/$': {
+      id: '/directors/skillai/$'
+      path: '/skillai/$'
+      fullPath: '/directors/skillai/$'
+      preLoaderRoute: typeof DirectorsSkillaiSplatRouteImport
+      parentRoute: typeof DirectorsRoute
+    }
   }
 }
 
@@ -913,6 +951,8 @@ interface DirectorsRouteChildren {
   DirectorsSettingsRoute: typeof DirectorsSettingsRoute
   DirectorsTasksRoute: typeof DirectorsTasksRoute
   DirectorsIndexRoute: typeof DirectorsIndexRoute
+  DirectorsSkillaiSplatRoute: typeof DirectorsSkillaiSplatRoute
+  DirectorsSkillaiIndexRoute: typeof DirectorsSkillaiIndexRoute
 }
 
 const DirectorsRouteChildren: DirectorsRouteChildren = {
@@ -927,6 +967,8 @@ const DirectorsRouteChildren: DirectorsRouteChildren = {
   DirectorsSettingsRoute: DirectorsSettingsRoute,
   DirectorsTasksRoute: DirectorsTasksRoute,
   DirectorsIndexRoute: DirectorsIndexRoute,
+  DirectorsSkillaiSplatRoute: DirectorsSkillaiSplatRoute,
+  DirectorsSkillaiIndexRoute: DirectorsSkillaiIndexRoute,
 }
 
 const DirectorsRouteWithChildren = DirectorsRoute._addFileChildren(
